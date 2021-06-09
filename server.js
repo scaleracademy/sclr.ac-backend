@@ -8,7 +8,7 @@ const {db} = require("./config/mongodb")
 app.use(express.urlencoded({extended: true}))
 app.use(express.json())
 
-app.use("/api", require("./routes/api/").route)
+app.use("/", require("./routes/").route)
 
 app.listen(PORT, () => {
     console.log("server started on port : ", PORT);

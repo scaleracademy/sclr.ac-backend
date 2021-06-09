@@ -15,7 +15,7 @@ const shortenURLSchema = new mongoose.Schema({
     },
     lastVisited: {
         type: Number,
-        default: Date.now()
+        default: 0
     }
 })
 

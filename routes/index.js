@@ -1,6 +1,6 @@
 const route = require("express").Router();
-const {findForShortCode, createShortURL, changeVisitsandTime} = require("../../../controllers/shortURL");
-const {urlExistenceCheck, shortCodeValidation} = require("../../../middlewares/generateShortCode")
+const {findForShortCode, createShortURL, changeVisitsandTime} = require("../controllers/shortURL");
+const {urlExistenceCheck, shortCodeValidation} = require("../middlewares/generateShortCode")
 
 // redirect to the original URL path when requested with the short URL path
 route.get("/:shortcode", async (req, res) => {
@@ -14,9 +14,9 @@ route.get("/:shortcode", async (req, res) => {
 })
 
 // generate a short URL path
-route.post("/", urlExistenceCheck, shortCodeValidation, (req, res) => {
+route.post("/generate", urlExistenceCheck, shortCodeValidation, (req, res) => {
     createShortURL(req.body)
-    res.send(201).send({status: "Success", shortCode: req.body.shortCode});
+    res.status(201).send({status: "Success", shortCode: req.body.shortCode});
 })
 
 module.exports = {route}
