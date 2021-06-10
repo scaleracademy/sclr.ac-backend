@@ -10,5 +10,5 @@ export const connect = async () => await createConnection({
     logger: "advanced-console",
     entities: [ ShortCode ],
     synchronize: true,
-    dropSchema: true, // TODO: never in production, drops tables on restart
+    // dropSchema: true, // TODO: never in production, drops tables on restart
 });
