@@ -1,5 +1,5 @@
 import {createConnection, Connection} from "typeorm";
-import { ShortCode } from "./entities/ShortCode";
+import { ShortCode } from "./entities/shortcode.entity";
 
 export const connect = async () => await createConnection({
     type: "postgres",
