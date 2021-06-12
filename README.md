@@ -69,7 +69,7 @@ Success Response (status: `200`)
 
 #### Setup 
 
-Setup database, user for this projet
+Setup database, user for this project
 
 ```postgres
 create database sclrac; 
