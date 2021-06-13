@@ -8,6 +8,10 @@ export async function createRandomShortCode(longUrl: string): Promise<ShortCode>
     const shortCode = intToRadix64(randomCode)
 
     // TODO: retry if exists
+    let check = getShortCodeDetails(shortCode)
+    if(check!==undefined){
+        return await createRandomShortCode(longUrl);
+    }
     return await createSpecificShortCode(shortCode, longUrl)
 }
 
@@ -18,7 +22,6 @@ export async function createSpecificShortCode(shortCode: string, longUrl: string
     newEntity.longUrl = longUrl
 
     // TODO: check shortcode already exists
-    
     const savedEntity = await getShortCodeRepo().save(newEntity)
     return savedEntity
 
