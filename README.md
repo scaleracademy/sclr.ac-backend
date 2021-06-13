@@ -1,12 +1,12 @@
 # sclr.ac-backend
 Backend for sclr.ac URL shortner 
 
-
 ## Development 
 
 ### API Endpoints 
 
 #### `GET /{shortcode}`
+
 Generate 302 redirect to longURL of that shortcode  
 
 #### `POST /api/urls` 
@@ -32,7 +32,6 @@ Create new short code url (this will assign a random short code)
 
 #### `PUT /api/urls/{shortcode}`
 Create a new shortcode with the given one 
-
 Request 
 ```json
 {
@@ -51,8 +50,25 @@ Success Response (status: `201`)
 }
 ```
 
+
 #### `GET /api/urls/{shortcode}`
 Get details about a short code 
+
+Error Response (status: `400` ) 
+```json
+{
+    "status": "error",
+    "message": "Invalid short Code, too long!"
+}
+```
+
+Error Response (status: `404`) 
+```json
+{
+    "status": "error",
+    "message": "Invalid short code. Not found in DB"
+}
+```
 
 Success Response (status: `200`)
 ```json 
