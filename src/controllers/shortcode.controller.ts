@@ -8,6 +8,9 @@ export async function createRandomShortCode(longUrl: string): Promise<ShortCode>
     const shortCode = intToRadix64(randomCode)
 
     // TODO: retry if exists
+    if(await getShortCodeDetails(shortCode)) {
+        return await createRandomShortCode(longUrl)
+    }
     return await createSpecificShortCode(shortCode, longUrl)
 }
 
