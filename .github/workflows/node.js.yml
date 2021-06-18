@@ -40,10 +40,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     
-    - name: Install Node packages
-      run: npm install
-    
-    - name: Run Tests
+    - name: Run CI
       run: npm ci
     
     - name: Build Application
