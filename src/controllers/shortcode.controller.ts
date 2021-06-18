@@ -7,7 +7,10 @@ export async function createRandomShortCode(longUrl: string): Promise<ShortCode>
     const randomCode = Math.floor(Math.random() * 99999999)
     const shortCode = intToRadix64(randomCode)
 
-    // TODO: retry if exists
+    // if the shortcode exists, we will recurse
+    if(await getShortCodeDetails(shortCode)) {
+        return await createRandomShortCode(longUrl)
+    }
     return await createSpecificShortCode(shortCode, longUrl)
 }
 
