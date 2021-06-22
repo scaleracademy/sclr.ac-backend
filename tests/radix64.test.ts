@@ -1,4 +1,4 @@
-import { intToRadix64, radix64toInt } from "./radix64";
+import { intToRadix64, radix64toInt } from "../src/services/radix64";
 
 describe("Running tests for radix64", () => {
   it("converts int to radix64 correctly", () => {
