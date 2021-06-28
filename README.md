@@ -1,6 +1,8 @@
 # sclr.ac-backend
 Backend for sclr.ac URL shortner 
 
+[![Node.JS CI Status](https://github.com/scaleracademy/sclr.ac-backend/actions/workflows/node.js.yml/badge.svg)](https://github.com/scaleracademy/sclr.ac-backend/actions/workflows/node.js.yml)
+
 ## Development 
 
 ### API Endpoints 
