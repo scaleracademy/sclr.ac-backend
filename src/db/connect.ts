@@ -22,7 +22,7 @@ export const connect = async () => {
             entities: [ShortCode],
             synchronize: true
         };
-    };
+    }
 
     await createConnection(options);
 };
