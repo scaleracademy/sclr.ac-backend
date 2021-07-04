@@ -18,7 +18,7 @@ export async function createSpecificShortCode(shortCode: string, longUrl: string
     const newEntity = new ShortCode()
 
     // check if shortCode is less than 8 chars in length 
-    if(shortCode.length < 8) {
+    if(shortCode.length > 8) {
         throw new Error("ShortCode is too long")
     }
 
