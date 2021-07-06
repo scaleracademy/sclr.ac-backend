@@ -17,8 +17,8 @@ export async function createRandomShortCode(longUrl: string): Promise<ShortCode>
 export async function createSpecificShortCode(shortCode: string, longUrl: string): Promise<ShortCode> {
     const newEntity = new ShortCode()
 
-    // check if shortCode is less than 8 chars in length 
-    if(shortCode.length > 8) {
+    // check if shortCode is less than 8 chars in length
+    if(shortCode.length >= 8) {
         throw new Error("ShortCode is too long")
     }
 
