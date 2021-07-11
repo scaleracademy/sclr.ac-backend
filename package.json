@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "prestart": "npm run build",
+    "prestart:dev": "npm run build",
+    "start:dev":"node dist/run.js",
     "start": "node dist/run.js",
     "test": "jest",
     "test:watch": "npm run test -- --watch",

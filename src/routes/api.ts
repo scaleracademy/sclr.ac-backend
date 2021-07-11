@@ -1,5 +1,5 @@
 import { Router } from 'express'
-import { createSpecificShortCode, getShortCodeDetails } from '../controllers/shortcode.controller'
+import { createSpecificShortCode, getShortCodeDetails, createRandomShortCode } from '../controllers/shortcode.controller'
 
 const route = Router()
 
@@ -31,7 +31,7 @@ route.post('/urls', async (req, res) => {
     // TODO: create a new shortcode entry and send the details back
     const longUrl = req.body.url
 
-    const savedShortCode = await generateRandomShortCode(longUrl)
+    const savedShortCode = await createRandomShortCode(longUrl)
 
     return res.status(201).json({ 
         status: 'success',
