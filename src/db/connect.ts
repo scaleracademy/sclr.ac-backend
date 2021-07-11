@@ -13,7 +13,7 @@ export const connect = async () => {
         synchronize: true,
     };
     
-    if (process.env.NODE_ENV == "production") {
+    if (process.env.NODE_ENV === "production") {
         options = {
             type: "postgres",
             url: process.env.DATABASE_URL,
