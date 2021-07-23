@@ -61,7 +61,3 @@ route.put('/urls/:code', async(req, res) => {
 })
 
 export default route
-
-function generateRandomShortCode(longUrl: string) {
-  throw new Error('Function not implemented.')
-}
