@@ -3,7 +3,7 @@ import { getShortCodeDetails } from '../controllers/shortcode.controller'
 
 const route = Router()
 
-route.get('/:code', async (req, res) => {
+route.get('/:code', async(req, res) => {
   const shortCode = req.params.code // TODO: validate < 8 char
 
   const savedShortCode = await getShortCodeDetails(shortCode)

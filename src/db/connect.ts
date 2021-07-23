@@ -1,7 +1,7 @@
 import { createConnection, ConnectionOptions } from 'typeorm'
 import { ShortCode } from './entities/shortcode.entity'
 
-export const connect = async () => {
+export const connect = async() => {
   let options: ConnectionOptions = {
     type: 'postgres',
     username: 'sclrac',

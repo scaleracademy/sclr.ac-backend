@@ -5,6 +5,8 @@ module.exports = {
   },
   extends: [
     'standard',
+    'plugin:@typescript-eslint/eslint-recommended',
+    'plugin:@typescript-eslint/recommended',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -18,6 +20,8 @@ module.exports = {
     'comma-dangle': ['error', 'always-multiline'],
     quotes: ['error', 'single'],
     'space-in-parens': ['error', 'never'],
-    'no-unused-vars': ['warn', 'all'],
+    'no-unused-vars': ['off'],
+    'space-before-function-paren': ['error', 'never'],
+    '@typescript-eslint/explicit-module-boundary-types': ['off'],
   },
 }

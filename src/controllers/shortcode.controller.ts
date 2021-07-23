@@ -1,7 +1,7 @@
 import { getShortCodeRepo, ShortCode } from '../db/entities/shortcode.entity'
 import { intToRadix64, radix64toInt } from '../services/radix64'
 
-export async function createRandomShortCode (longUrl: string): Promise<ShortCode> {
+export async function createRandomShortCode(longUrl: string): Promise<ShortCode> {
   const randomCode = Math.floor(Math.random() * 99999999)
   const shortCode = intToRadix64(randomCode)
 
@@ -12,7 +12,7 @@ export async function createRandomShortCode (longUrl: string): Promise<ShortCode
   return await createSpecificShortCode(shortCode, longUrl)
 }
 
-export async function createSpecificShortCode (shortCode: string, longUrl: string): Promise<ShortCode> {
+export async function createSpecificShortCode(shortCode: string, longUrl: string): Promise<ShortCode> {
   const newEntity = new ShortCode()
 
   // check if shortCode is less than 8 chars in length
@@ -30,7 +30,7 @@ export async function createSpecificShortCode (shortCode: string, longUrl: strin
   return savedEntity
 }
 
-export async function getShortCodeDetails (shortCode: string): Promise<ShortCode | undefined> {
+export async function getShortCodeDetails(shortCode: string): Promise<ShortCode | undefined> {
   const id = radix64toInt(shortCode)
 
   const savedEntity = await getShortCodeRepo().findOne(id, { select: ['shortCode', 'longUrl'] })

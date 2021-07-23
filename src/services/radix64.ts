@@ -6,7 +6,7 @@ ALPHABET.split('').forEach((d, i) => {
   DIGIT_MAP[d] = i
 })
 
-function radix64toInt (r64num: string): number {
+function radix64toInt(r64num: string): number {
   let base10num = 0
   r64num.split('').reverse().forEach((d, i) => {
     base10num += (DIGIT_MAP[d] * Math.pow(64, i))
@@ -14,7 +14,7 @@ function radix64toInt (r64num: string): number {
   return base10num
 }
 
-function intToRadix64 (base10num: number): string {
+function intToRadix64(base10num: number): string {
   const r64Chars = []
   let d = base10num
   if (d === 0) return '0'
