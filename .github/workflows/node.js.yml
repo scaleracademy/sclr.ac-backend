@@ -41,6 +41,9 @@ jobs:
     
     - name: Run CI
       run: npm ci
+
+    - name: Run Lint Check
+      run: npm run lint
     
     - name: Build Application
       run: npm run build
