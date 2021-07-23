@@ -16,6 +16,9 @@ module.exports = {
   plugins: [
     '@typescript-eslint',
   ],
+  ignorePatterns: [
+    'dist/**/*',
+  ],
   rules: {
     'comma-dangle': ['error', 'always-multiline'],
     quotes: ['error', 'single'],

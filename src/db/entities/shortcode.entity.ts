@@ -2,16 +2,16 @@ import { Column, Entity, getRepository, PrimaryColumn, PrimaryGeneratedColumn, R
 
 @Entity()
 export class ShortCode {
-    @PrimaryColumn( { type: 'bigint' } )
+    @PrimaryColumn({ type: 'bigint' })
     id!: number
 
-    @Column( { length: '9' } )
+    @Column({ length: '9' })
     shortCode!: string
 
-    @Column( { type: 'text' } )
+    @Column({ type: 'text' })
     longUrl!: string
 }
 
-export function getShortCodeRepo (): Repository<ShortCode> {
-  return getRepository( ShortCode )
+export function getShortCodeRepo(): Repository<ShortCode> {
+  return getRepository(ShortCode)
 }

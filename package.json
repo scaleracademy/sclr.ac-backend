@@ -11,8 +11,8 @@
     "test": "jest",
     "test:watch": "npm run test -- --watch",
     "clean": "rimraf dist",
-    "lint": "eslint src/**/*.ts",
-    "lint:fix": "eslint --fix src/**/*.ts",
+    "lint": "eslint --ext .js,.ts,.jsx,.tsx .",
+    "lint:fix": "eslint --fix --ext .js,.ts,.jsx,.tsx .",
     "prepare": "husky install"
   },
   "repository": {
