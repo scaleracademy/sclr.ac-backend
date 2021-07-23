@@ -6,8 +6,8 @@
   "scripts": {
     "build": "tsc",
     "prestart:dev": "npm run build",
-    "start:dev": "node dist/run.js",
-    "start": "node dist/run.js",
+    "start:dev": "cross-env NODE_ENV=development node dist/run.js",
+    "start": "cross-env NODE_ENV=production node dist/run.js",
     "test": "jest",
     "test:watch": "npm run test -- --watch",
     "clean": "rimraf dist",
@@ -38,6 +38,7 @@
     "@types/jest": "^26.0.23",
     "@typescript-eslint/eslint-plugin": "^4.28.4",
     "@typescript-eslint/parser": "^4.28.4",
+    "cross-env": "^7.0.3",
     "eslint": "^7.31.0",
     "eslint-config-standard": "^16.0.3",
     "eslint-plugin-import": "^2.23.4",
