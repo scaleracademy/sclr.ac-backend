@@ -1,4 +1,4 @@
-import { Column, Entity, getRepository, PrimaryColumn, PrimaryGeneratedColumn, Repository } from 'typeorm'
+import { Column, Entity, getRepository, PrimaryColumn, Repository } from 'typeorm'
 
 @Entity()
 export class ShortCode {
