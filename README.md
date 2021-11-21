@@ -41,7 +41,7 @@ Create a new shortcode with the given one
 Request 
 ```json
 {
-    "url": "https://some.long.url/of/long/length
+    "url": "https://some.long.url/of/long/length"
 }
 ```
 
